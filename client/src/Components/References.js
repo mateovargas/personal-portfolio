@@ -9,7 +9,7 @@ import Footer from './Footer';
 
 const References = () => {
     return (
-        <div>
+        <div className="App">
             <Container fluid>
                 <Row>
                     <Col>

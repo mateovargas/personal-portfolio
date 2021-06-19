@@ -17,7 +17,7 @@ class App extends Component {
   render(){
     const App = () => (
       <div>
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
           <Navbar.Brand href="/">MATEO VARGAS</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

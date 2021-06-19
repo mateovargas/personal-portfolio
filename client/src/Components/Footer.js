@@ -43,7 +43,9 @@ const Footer = () => {
             <Row>
                 <Col></Col>
                 <Col>
-                    <p>Mateo Vargas</p>
+                    <Link>
+                        <a href='https://github.com/mateovargas'>Mateo Vargas</a>
+                    </Link>
                     <p>Copyright &copy; 2021</p>
                 </Col>
                 <Col></Col>
