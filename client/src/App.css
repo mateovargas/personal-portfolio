@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #222629;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 html{
@@ -70,6 +71,7 @@ html{
 .blockquote-footer{
   color: #222629;
 }
+
 
 h1{
   color: #86C232;

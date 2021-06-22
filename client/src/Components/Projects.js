@@ -66,6 +66,50 @@ const Projects = () => {
                         </Card>
                     </Col>
                 </Row>
+                <Row>
+                    <Col>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Body>
+                                <Card.Title>WorkLifeBalance</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">MERN Stack</Card.Subtitle>
+                                <Card.Text>
+                                    Applicaiton that allows users to login and keep track of their hours spent.
+                                </Card.Text>
+                                <Card.Link href="https://frozen-sierra-80656.herokuapp.com/">Use It Here</Card.Link>
+                                <Card.Link href="https://github.com/mateovargas/workLife">Github</Card.Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Body>
+                                <Card.Title>FriendFinder</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">ReactJS, Express</Card.Subtitle>
+                                <Card.Text>
+                                    Applicaiton that allows users pair themselves with their most likely match.
+                                </Card.Text>
+                                <Card.Link href="https://floating-dawn-36930.herokuapp.com/">Use It Here</Card.Link>
+                                <Card.Link href="https://github.com/mateovargas/friends-app">Github</Card.Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col>
+                    <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Body>
+                                <Card.Title>Bob's Burger</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">Express, HandlebarsJS</Card.Subtitle>
+                                <Card.Text>
+                                    Application that lets you feed Bob's friend!
+                                </Card.Text>
+                                <Card.Link href="https://aqueous-hamlet-72599.herokuapp.com/">Use It Here</Card.Link>
+                                <Card.Link href="https://github.com/mateovargas/burger">Github</Card.Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
                 <Footer></Footer>
             </Container>
         </div>

@@ -10,6 +10,8 @@ import Footer from './Footer';
 import { DiGithubBadge } from 'react-icons/di';
 import { AiFillYoutube, AiFillLinkedin } from 'react-icons/ai';
 import { FiTwitch } from 'react-icons/fi';
+import logo from '../Images/logo.png'
+import Image from 'react-bootstrap/Image';
 
 
 const Links = () => {
@@ -22,7 +24,12 @@ const Links = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col></Col>
+                    <Col>
+                        <Image src={ logo } fluid></Image>
+                    </Col>
+                    <Col>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4Z5m0RLlo-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </Col>
                     <Col>
                         <ListGroup as="ul">
                             <ListGroup.Item as="li">
@@ -51,7 +58,6 @@ const Links = () => {
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
-                    <Col></Col>
                 </Row>
                 <Footer></Footer>
             </Container>
