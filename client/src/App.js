@@ -7,31 +7,45 @@ import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import Links from './Components/Links';
 import References from './Components/References';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import { BsCodeSlash } from 'react-icons/bs';
-import { BiPen} from 'react-icons/bi';
-import { AiOutlineLink, AiFillHome } from 'react-icons/ai';
+import anime from 'animejs/lib/anime.es.js';
+import MyPhoto from './Images/me.jpg';
 
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      "pages": [
+        {
+          "title": "About",
+          "text": "Mateo Vargas is a software developer from San Diego, CA. He attended the University of California, San Diego for his Bachelors of Science in Cognitive Science with an emphasis in Neuroscience and a Minor in Computer Science.He then pursued a Masters of Science in Computer Science at the University of Edinburgh, in Scotland. After attending graduate school, he completed a Trilogy bootcamp in the MERN stack at the University of California, San Diego Extension while working as an automation process software developer at MUFG Union Bank.In his spare time, he likes to play video games, and can be found recording lets plays for Youtube and streaming to Twitch. He lives with his partner and their one dog.",
+          "img": MyPhoto
+        }
+      ]
+    }
+  }
+
+  componentDidMount(){
+
+    let textWrapper = document.querySelector('.ml9 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: false })
+      .add({
+        targets: '.ml9 .letter',
+        scale: [0, 1],
+        duration: 3000,
+        elasticity: 600,
+        delay: (el, i) => 45 * (i + 1)
+      });
+  }
+
   render(){
     const App = () => (
       <div>
-        <Navbar expand="lg">
-          <Navbar.Brand href="/"><h1 className="logo">Mateo Vargas</h1></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/"><AiFillHome></AiFillHome>Home</Nav.Link>
-              <Nav.Link href="/projects"><BsCodeSlash></BsCodeSlash>Projects</Nav.Link>
-              <Nav.Link href="/references"><BiPen></BiPen>References</Nav.Link>
-              <Nav.Link href="/links"><AiOutlineLink></AiOutlineLink>Links</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
         <Switch>
-          <Route exact path='/' component={ Home }></Route>
+          <Route exact path='/' component={ Home } page={this.state.pages[0]}></Route>
           <Route path='/projects' component={ Projects }></Route>
           <Route path='/references' component={ References }></Route> 
           <Route path='/links' component={ Links }></Route>

@@ -7,14 +7,23 @@ import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import MyPhoto from '../Images/me.jpg';
 import Footer from './Footer';
+import NavComponent from './NavComponent';
 
-const Home = () => {
+const Home = (props) => {
+
+    console.log(props.title);
+    console.log(props);
     return (
         <div className="App">
+            <NavComponent></NavComponent>
             <Container fluid>
                 <Row>
                     <Col>
-                        <h1>About</h1>
+                        <h1 className="ml9">
+                            <span className="text-wrapper">
+                                <span className="letters">About{props.title}</span>
+                            </span>
+                        </h1>
                     </Col>
                 </Row>
                 <Row>
@@ -36,8 +45,8 @@ const Home = () => {
                         </p>
                     </Col>
                 </Row>
-                <Footer></Footer>
             </Container>
+            <Footer></Footer>
         </div>
     )
 }

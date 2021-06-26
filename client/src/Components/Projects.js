@@ -11,14 +11,23 @@ import SPAMStore from '../Images/SPAM-Store.png';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Footer from './Footer';
+import NavComponent from './NavComponent';
+import Burger from '../Images/burger.png';
+import FriendFinder from '../Images/friendfinder.png';
+import WorkLife from '../Images/worklife.png';
 
 const Projects = () => {
     return (
         <div className="App">
+            <NavComponent></NavComponent>
             <Container>
                 <Row>
                     <Col>
-                        <h1>Projects</h1>
+                        <h1 className="ml9">
+                            <span className="text-wrapper">
+                                <span className="letters">Projects</span>
+                            </span>
+                        </h1>
                     </Col>
                 </Row>
                 <Row>
@@ -69,7 +78,7 @@ const Projects = () => {
                 <Row>
                     <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Img variant="top" src={WorkLife} />
                             <Card.Body>
                                 <Card.Title>WorkLifeBalance</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">MERN Stack</Card.Subtitle>
@@ -83,7 +92,7 @@ const Projects = () => {
                     </Col>
                     <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Img variant="top" src={FriendFinder} />
                             <Card.Body>
                                 <Card.Title>FriendFinder</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">ReactJS, Express</Card.Subtitle>
@@ -97,7 +106,7 @@ const Projects = () => {
                     </Col>
                     <Col>
                     <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={SPAMStore} />
+                            <Card.Img variant="top" src={Burger} />
                             <Card.Body>
                                 <Card.Title>Bob's Burger</Card.Title>
                                 <Card.Subtitle className="mb-2 text-muted">Express, HandlebarsJS</Card.Subtitle>
