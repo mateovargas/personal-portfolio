@@ -29,25 +29,25 @@ const Links = () => {
                             <ListGroup.Item as="li">
                                 <Link target='_blank'>
                                     <DiGithubBadge></DiGithubBadge>
-                                    <a href='https://github.com/mateovargas'>Github</a>
+                                    <a href='https://github.com/mateovargas' target='_blank'>Github</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
                                 <Link target='_blank'>
                                     <AiFillLinkedin></AiFillLinkedin>
-                                    <a href="https://www.linkedin.com/in/mateo-vargas-03896189/">LinkedIn</a>
+                                    <a href="https://www.linkedin.com/in/mateo-vargas-03896189/" target='_blank'>LinkedIn</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
                                 <Link target='_blank'>
                                     <FiTwitch></FiTwitch>
-                                    <a href="https://twitch.tv/matvar55">Twitch</a>
+                                    <a href="https://twitch.tv/matvar55" target='_blank'>Twitch</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
                                 <Link target='_blank'>
                                     <AiFillYoutube></AiFillYoutube>
-                                    <a href="https://youtube.com/matvar55">Youtube</a>
+                                    <a href="https://youtube.com/matvar55" target='_blank'>Youtube</a>
                                 </Link>
                             </ListGroup.Item>
                         </ListGroup>
