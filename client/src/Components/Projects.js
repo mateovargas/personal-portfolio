@@ -1,123 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
-import Xeno from '../Images/game.png';
-import Pokedex from '../Images/Pokedex.png';
-import SPAMStore from '../Images/SPAM-Store.png';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Footer from './Footer';
 import NavComponent from './NavComponent';
-import Burger from '../Images/burger.png';
-import FriendFinder from '../Images/friendfinder.png';
-import WorkLife from '../Images/worklife.png';
+import Title from './Title.js';
+import ProjectsData from '../Data/ProjectsData';
 
 const Projects = () => {
+
+    let [title, projects, rowOne, rowTwo] = useState();
+
+    title = ProjectsData.title;
+    projects = ProjectsData.projects;
+    rowOne = [];
+    rowTwo = [];
+
+    for(let i = 0; i < projects.length; i++){
+        if(i < 3){
+            rowOne.push(projects[i]);
+        }
+        else if( i >= 3 && i < 6){
+            rowTwo.push(projects[i]);
+        }
+    }
+
+    console.log(rowOne);
+    console.log(rowTwo);
+
     return (
         <div className="App">
             <NavComponent></NavComponent>
-            <Container>
+            <Container fluid>
+                <Title title={title}></Title>
                 <Row>
-                    <Col>
-                        <h1 className="ml9">
-                            <span className="text-wrapper">
-                                <span className="letters">Projects</span>
-                            </span>
-                        </h1>
-                    </Col>
+                    {rowOne.map((projects) => (
+                        <Col key={ projects.id }>
+                            <Card style={{ width: '18rem' }} key={projects.id}>
+                                <Card.Img variant="top" src={projects.image}/>
+                                <Card.Body key={projects.id}>
+                                    <Card.Title key={projects.id}>{projects.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">{projects.technology}</Card.Subtitle>
+                                    <Card.Text>
+                                        {projects.description}
+                                    </Card.Text>
+                                    <Card.Link href={projects.link} target='_blank'>Use It Here</Card.Link>
+                                    <Card.Link href={projects.github} target='_blank'>Github</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
                 <Row>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={ Pokedex } />
-                            <Card.Body>
-                                <Card.Title>Pokedex</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">ReactJS</Card.Subtitle>
-                                <Card.Text>
-                                    A front-end application that allows you to search for a Pokemon using
-                                    the PokeAPI.
-                                </Card.Text>
-                                <Card.Link href="https://react-pokedex-mv.herokuapp.com/">Use It Here</Card.Link>
-                                <Card.Link href="https://github.com/mateovargas/pokedex">Github Repository</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={ Xeno } />
-                            <Card.Body>
-                                <Card.Title>Xenoplague</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Unity2D and C#</Card.Subtitle>
-                                <Card.Text>
-                                    A game that simulates the spread of a disease, created
-                                    and presented as Mateo's Masters thesis.
-                                </Card.Text>
-                                <Card.Link href="https://mateovargas.itch.io/discrete-sir-games-for-understanding-epidemics">Use It Here</Card.Link>
-                                <Card.Link href="https://github.com/mateovargas/dissertation">Github Repository</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={ SPAMStore } />
-                            <Card.Body>
-                                <Card.Title>SPAM-Store</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">MERN Stack</Card.Subtitle>
-                                <Card.Text>
-                                    This is a React boilerplate single page responsive portfolio app for store fronts.
-                                </Card.Text>
-                                <Card.Link href="https://github.com/React-BP/SPAM-store">Github</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={WorkLife} />
-                            <Card.Body>
-                                <Card.Title>WorkLifeBalance</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">MERN Stack</Card.Subtitle>
-                                <Card.Text>
-                                    Applicaiton that allows users to login and keep track of their hours spent.
-                                </Card.Text>
-                                <Card.Link href="https://frozen-sierra-80656.herokuapp.com/">Use It Here</Card.Link>
-                                <Card.Link href="https://github.com/mateovargas/workLife">Github</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={FriendFinder} />
-                            <Card.Body>
-                                <Card.Title>FriendFinder</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">ReactJS, Express</Card.Subtitle>
-                                <Card.Text>
-                                    Applicaiton that allows users pair themselves with their most likely match.
-                                </Card.Text>
-                                <Card.Link href="https://floating-dawn-36930.herokuapp.com/">Use It Here</Card.Link>
-                                <Card.Link href="https://github.com/mateovargas/friends-app">Github</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                    <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={Burger} />
-                            <Card.Body>
-                                <Card.Title>Bob's Burger</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Express, HandlebarsJS</Card.Subtitle>
-                                <Card.Text>
-                                    Application that lets you feed Bob's friend!
-                                </Card.Text>
-                                <Card.Link href="https://aqueous-hamlet-72599.herokuapp.com/">Use It Here</Card.Link>
-                                <Card.Link href="https://github.com/mateovargas/burger">Github</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
+                    {rowTwo.map((projects) => (
+                        <Col key={projects.id}>
+                            <Card style={{ width: '18rem' }} key={projects.id}>
+                                <Card.Img variant="top" src={projects.image} />
+                                <Card.Body key={projects.id}>
+                                    <Card.Title key={projects.id}>{projects.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">{projects.technology}</Card.Subtitle>
+                                    <Card.Text>
+                                        {projects.description}
+                                    </Card.Text>
+                                    <Card.Link href={projects.link} target='_blank'>Use It Here</Card.Link>
+                                    <Card.Link href={projects.github} target='_blank'>Github</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
                 <Footer></Footer>
             </Container>

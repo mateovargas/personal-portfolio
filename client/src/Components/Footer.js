@@ -9,6 +9,7 @@ import { BiPen } from 'react-icons/bi';
 import { AiOutlineLink, AiFillHome } from 'react-icons/ai';
 
 const Footer = () => {
+    
     return (
         <div>
             <footer>
@@ -50,7 +51,7 @@ const Footer = () => {
                 <Row>
                     <Col></Col>
                     <Col>
-                        <a href='https://github.com/mateovargas'>Mateo Vargas</a>
+                        <a href='https://github.com/mateovargas' target='_blank'>Mateo Vargas</a>
                         <p>Copyright &copy; 2021</p>
                     </Col>
                     <Col></Col>

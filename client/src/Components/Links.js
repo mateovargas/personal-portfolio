@@ -11,6 +11,7 @@ import { FiTwitch } from 'react-icons/fi';
 import logo from '../Images/logo.png'
 import Image from 'react-bootstrap/Image';
 import NavComponent from './NavComponent';
+import Title from './Title.js';
 
 
 const Links = () => {
@@ -18,15 +19,7 @@ const Links = () => {
         <div className="App">
             <NavComponent></NavComponent>
             <Container fluid>
-                <Row>
-                    <Col>
-                        <h1 className="ml9">
-                            <span className="text-wrapper">
-                                <span className="letters">Links</span>
-                            </span>
-                        </h1>
-                    </Col>
-                </Row>
+                <Title title="Links"></Title>
                 <Row>
                     <Col>
                         <Image src={ logo } fluid></Image>
@@ -34,25 +27,25 @@ const Links = () => {
                     <Col>
                         <ListGroup as="ul">
                             <ListGroup.Item as="li">
-                                <Link>
+                                <Link target='_blank'>
                                     <DiGithubBadge></DiGithubBadge>
                                     <a href='https://github.com/mateovargas'>Github</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
-                                <Link>
+                                <Link target='_blank'>
                                     <AiFillLinkedin></AiFillLinkedin>
                                     <a href="https://www.linkedin.com/in/mateo-vargas-03896189/">LinkedIn</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
-                                <Link>
+                                <Link target='_blank'>
                                     <FiTwitch></FiTwitch>
                                     <a href="https://twitch.tv/matvar55">Twitch</a>
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item as="li">
-                                <Link>
+                                <Link target='_blank'>
                                     <AiFillYoutube></AiFillYoutube>
                                     <a href="https://youtube.com/matvar55">Youtube</a>
                                 </Link>

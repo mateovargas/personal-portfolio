@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -8,40 +8,29 @@ import Image from 'react-bootstrap/Image';
 import MyPhoto from '../Images/me.jpg';
 import Footer from './Footer';
 import NavComponent from './NavComponent';
+import { BiLeftTopArrowCircle } from 'react-icons/bi';
+import HomeData from '../Data/HomeData.js';
+import Title from './Title.js';
 
-const Home = (props) => {
+const Home = () => {
 
-    console.log(props.title);
-    console.log(props);
+    let [title, textInfo] = useState();
+
+    title = HomeData.title;
+    textInfo = HomeData.info;
+
     return (
         <div className="App">
             <NavComponent></NavComponent>
             <Container fluid>
+                <Title title={title}></Title>
                 <Row>
                     <Col>
-                        <h1 className="ml9">
-                            <span className="text-wrapper">
-                                <span className="letters">About{props.title}</span>
-                            </span>
-                        </h1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Image src={ MyPhoto } alt="Logo" roundedCircle fluid />
+                        <Image src={ MyPhoto } alt="Portrait" roundedCircle fluid />
                     </Col>
                     <Col>
                         <p>
-                            Mateo Vargas is a software developer from San Diego, CA.
-                            He attended the University of California, San Diego for his
-                            Bachelors of Science in Cognitive Science with an emphasis in
-                            Neuroscience and a Minor in Computer Science. He then pursued a 
-                            Masters of Science in Computer Science at the University of Edinburgh,
-                            in Scotland. After attending graduate school, he completed a Trilogy bootcamp
-                            in the MERN stack at the University of California, San Diego Extension while working
-                            as an automation process software developer at MUFG Union Bank. In his spare time,
-                            he likes to play video games, and can be found recording let's plays for Youtube and streaming
-                            to Twitch. He lives with his partner and their one dog.
+                            {textInfo}
                         </p>
                     </Col>
                 </Row>

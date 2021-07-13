@@ -12,20 +12,7 @@ import MyPhoto from './Images/me.jpg';
 
 
 class App extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      "pages": [
-        {
-          "title": "About",
-          "text": "Mateo Vargas is a software developer from San Diego, CA. He attended the University of California, San Diego for his Bachelors of Science in Cognitive Science with an emphasis in Neuroscience and a Minor in Computer Science.He then pursued a Masters of Science in Computer Science at the University of Edinburgh, in Scotland. After attending graduate school, he completed a Trilogy bootcamp in the MERN stack at the University of California, San Diego Extension while working as an automation process software developer at MUFG Union Bank.In his spare time, he likes to play video games, and can be found recording lets plays for Youtube and streaming to Twitch. He lives with his partner and their one dog.",
-          "img": MyPhoto
-        }
-      ]
-    }
-  }
-
+  
   componentDidMount(){
 
     let textWrapper = document.querySelector('.ml9 .letters');
@@ -45,7 +32,7 @@ class App extends Component {
     const App = () => (
       <div>
         <Switch>
-          <Route exact path='/' component={ Home } page={this.state.pages[0]}></Route>
+          <Route exact path='/' component={ Home }></Route>
           <Route path='/projects' component={ Projects }></Route>
           <Route path='/references' component={ References }></Route> 
           <Route path='/links' component={ Links }></Route>
